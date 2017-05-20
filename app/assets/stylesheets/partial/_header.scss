@@ -1,0 +1,39 @@
+.header{
+  width: 100%;
+  background-color: black;
+  .header_bar{
+    .header_logo{
+      a{
+        color: red;
+        text-decoration: none;
+        float: left;
+        font-size: 30px;
+        padding: 15px 20px 15px;
+        font-family: fantasy;
+      }
+    }
+    .header_make_log_btn{
+      a{
+        float: right;
+        color: red;
+        text-decoration: none;
+        font-size: 30px;
+        padding: 15px 20px 15px;
+      }
+    }
+    .header_mypage_btn{
+      a{
+        color: red;
+        text-decoration: none;
+        float: right;
+        font-size: 30px;
+        padding: 15px 20px 15px;
+      }
+      @include clearfix()
+    }
+  }
+}
+
+a:hover{
+  background-color: #222222;
+}
