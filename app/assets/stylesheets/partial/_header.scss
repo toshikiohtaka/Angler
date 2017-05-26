@@ -1,34 +1,20 @@
-html, body{
-  height: 100%;
-}
-
-header{
-  width: 100%;
-  background-color: black;
-  position: fixed;
-  .header_bar{
-    .header_logo{
-      a{
-        color: red;
-        text-decoration: none;
-        float: left;
-        font-size: 32px;
-        padding: 0 20px 0;
-        font-family: fantasy;
-      }
-    }
-    .header_btn{
-      a{
-        float: right;
-        color: red;
-        text-decoration: none;
-        font-size: 20px;
-        padding: 10px 20px 10px;
-        &:hover{
-          background-color: white;
+#nav-color{
+  #app-name{
+    color: red;
+    font-family: fantasy;
+    font-size: 25px;
+  }
+  div{
+    ul{
+      li{
+        a{
+          color: red;
         }
       }
     }
-    @include clearfix()
   }
+}
+
+.footer{
+  padding-top: 20px;
 }

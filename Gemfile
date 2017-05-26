@@ -16,6 +16,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'pry-rails'
+gem 'bootstrap', '~> 4.0.0.alpha6'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
