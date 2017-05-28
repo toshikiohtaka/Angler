@@ -11,8 +11,47 @@
   </head>
 
   <body>
-    <%= render partial: "common/header" %>
-    <%= yield %>
-    <%= render partial: "common/footer" %>
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse" id="nav-color">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-light"></span>
+      </button>
+        <%= link_to "Angler", root_path, id: "app-name", class: "navbar-brand" %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <% if user_signed_in? %>
+              <%= link_to "マイページ", angler_path(current_user), class: "nav-link" %>
+            <% else %>
+              <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "マップで表示", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログを作成", new_log_path, class: "nav-link" %>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="ログで検索する">
+          <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <% if devise_controller? %>
+      <div class="devise-view text-center">
+        <div class="devise-view-inner">
+          <%= yield %>
+        </div>
+      </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
+
+    <footer class="footer bg-inverse fixed-bottom">
+      <div class="container">
+      </div>
+    </footer>
   </body>
 </html>
