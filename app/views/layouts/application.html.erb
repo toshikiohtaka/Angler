@@ -42,10 +42,12 @@
     <% if devise_controller? %>
       <div class="devise-view text-center">
         <div class="devise-view-inner">
+          <%= render "common/notification" %>
           <%= yield %>
         </div>
       </div>
     <% else %>
+      <%= render "common/notification" %>
       <%= yield %>
     <% end %>
 

@@ -11,7 +11,6 @@
 
 .btn-send{
   margin-top: 10px;
-  word-wrap: break-all;
 }
 
 #error_explanation {
@@ -37,3 +36,18 @@
     font-size: 13px;
   }
 }
+
+.notice{
+  background-color: blue;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+
+.alert{
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+
