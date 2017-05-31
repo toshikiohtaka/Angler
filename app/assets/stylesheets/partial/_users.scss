@@ -1,0 +1,53 @@
+.devise-view{
+  margin: 0 auto;
+  padding-top: 80px;
+  height: 100%;
+  width: 100%;
+  .devise-view-inner{
+    width: 100%;
+    padding: 10px 20px 20px;
+  }
+}
+
+.btn-send{
+  margin-top: 10px;
+}
+
+#error_explanation {
+  margin: 20px 0;
+  padding: 20px 30px;
+  border-radius: 2px;
+
+  h2 {
+    margin-bottom: 10px;
+    color: red;
+    font-size: 14px;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 17px;
+    list-style: none;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+  }
+}
+
+.notice{
+  background-color: blue;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+
+.alert{
+  background-color: red;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+

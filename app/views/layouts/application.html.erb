@@ -2,13 +2,58 @@
 <html>
   <head>
     <title>Angler</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse" id="nav-color">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-light"></span>
+      </button>
+        <%= link_to "Angler", root_path, id: "app-name", class: "navbar-brand" %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <% if user_signed_in? %>
+              <%= link_to "マイページ", angler_path(current_user), class: "nav-link" %>
+            <% else %>
+              <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "マップで表示", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "ログを作成", new_log_path, class: "nav-link" %>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="ログで検索する">
+          <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+
+    <% if devise_controller? %>
+      <div class="devise-view text-center">
+        <div class="devise-view-inner">
+          <%= render "common/notification" %>
+          <%= yield %>
+        </div>
+      </div>
+    <% else %>
+      <%= render "common/notification" %>
+      <%= yield %>
+    <% end %>
+
+    <footer class="footer bg-inverse fixed-bottom">
+      <div class="container">
+      </div>
+    </footer>
   </body>
 </html>
