@@ -12,24 +12,32 @@
 
   <body>
     <nav class="navbar fixed-top navbar-toggleable-md navbar-inverse bg-inverse" id="nav-color">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon bg-light"></span>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-haspopup="true" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon bg-light" id="toggler-btn"></span>
       </button>
         <%= link_to "Angler", root_path, id: "app-name", class: "navbar-brand" %>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <% if user_signed_in? %>
-              <%= link_to "マイページ", angler_path(current_user), class: "nav-link" %>
+              <div class="btn-group">
+                <button class="btn btn-danger dropdown-toggle bg-inverse" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  アカウント
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <%= link_to "マイページ", angler_path(current_user), class: "dropdown-item" %>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                </div>
+              </div>
             <% else %>
-              <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+              <%= link_to "ログイン", new_user_session_path, class: "nav-link text-white" %>
             <% end %>
           </li>
           <li class="nav-item">
-            <%= link_to "マップで表示", "#", class: "nav-link" %>
+            <%= link_to "マップで表示", "#", class: "nav-link text-white" %>
           </li>
           <li class="nav-item">
-            <%= link_to "ログを作成", new_log_path, class: "nav-link" %>
+            <%= link_to "ログを作成", new_log_path, class: "nav-link text-white" %>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
@@ -47,7 +55,6 @@
         </div>
       </div>
     <% else %>
-      <%= render "common/notification" %>
       <%= yield %>
     <% end %>
 
@@ -55,5 +62,6 @@
       <div class="container">
       </div>
     </footer>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   </body>
 </html>
