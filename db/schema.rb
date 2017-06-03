@@ -10,17 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170528155036) do
+ActiveRecord::Schema.define(version: 20170603064837) do
 
   create_table "logs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",        null: false
     t.integer  "size"
     t.string   "place"
-    t.string   "image"
     t.integer  "geolocation"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "image"
     t.index ["user_id"], name: "index_logs_on_user_id", using: :btree
   end
 
