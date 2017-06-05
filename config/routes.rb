@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'logs#index'
   get '/users', to: redirect("/users/sign_in")
   get '/logs', to: redirect("/logs/new")
+  get '/map' => 'maps#index'
   resources :logs, except: :index
   resources :anglers, only: :show
 end

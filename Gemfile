@@ -17,6 +17,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'pry-rails'
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'carrierwave'
+gem 'fog'
 
 
 group :development, :test do

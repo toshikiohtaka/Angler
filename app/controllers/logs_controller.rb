@@ -15,7 +15,7 @@ class LogsController < ApplicationController
     if @log.save
       redirect_to root_path
     else
-      render :new, alert: "名前を入力してください。"
+      render :new
     end
   end
 
