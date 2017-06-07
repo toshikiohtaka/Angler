@@ -1,7 +1,5 @@
 class LogsController < ApplicationController
 
-  before_action :authenticate_user!, except: :index
-
   def index
     @logs = Log.all
   end
