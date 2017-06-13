@@ -1,6 +1,7 @@
 function initMap() {
   // Geolocation APIに対応している
   if (navigator.geolocation) {
+    console.log(navigator.geolocation);
     // 現在地を取得
     navigator.geolocation.getCurrentPosition(
       // 取得成功した場合
@@ -46,4 +47,31 @@ function initMap() {
   } else {
     alert("この端末では位置情報が取得できません");
   }
+}
+
+function buildHiddenField(crd){
+  var field = '<input type=hidden name=lat value=' + crd.latitude + '>' +
+              '<input type=hidden name=lng value=' + crd.longitude + '>';
+  $("#new_log").append(field);
+}
+
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+function success(pos) {
+  var crd = pos.coords;
+  buildHiddenField(crd);
+};
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+};
+
+var url = window.location.href;
+
+if(url == "http://localhost:3000/logs/new" || url == "http://localhost:3000/map"){
+  navigator.geolocation.getCurrentPosition(success, error);
 }

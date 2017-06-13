@@ -19,6 +19,7 @@ gem 'pry-rails'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'carrierwave'
 gem 'fog'
+gem 'mini_magick'
 
 
 group :development, :test do

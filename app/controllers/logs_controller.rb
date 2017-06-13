@@ -11,6 +11,9 @@ class LogsController < ApplicationController
   def create
     @log = current_user.logs.new(log_params)
     if @log.save
+      if params[:lat] || params[:lng]
+        Map.create(lat: params[:lat], lng: params[:lng], log_id: @log.id)
+      end
       redirect_to root_path
     else
       render :new

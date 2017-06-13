@@ -5,13 +5,12 @@ img{
 
 #container-box{
   padding-top: 80px;
-}
-
-.card-group{
-  margin: auto;
-}
-
-.new-log-box{
-  padding: 30px;
-  border-style: solid silver;
+  height: 100%;
+  .new-log-box{
+    height: 100%;
+    #new_log{
+      margin: auto;
+      width: 100%;
+    }
+  }
 }

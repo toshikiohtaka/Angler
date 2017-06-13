@@ -1,0 +1,25 @@
+#map-container{
+  height: 100%;
+  #map{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 20px);
+  }
+  ul{
+    position: absolute;
+    padding-top: 61px;
+    width: 35%;
+    height: calc(100% - 20px);
+    background: rgba(255,0,0,0.5);
+    text-decoration: none;
+    .container{
+      margin-bottom: 10px;
+      .log-image{
+        img{
+          width: 30%;
+          height: 30%;
+        }
+      }
+    }
+  }
+}
