@@ -51,4 +51,5 @@ ActiveRecord::Schema.define(version: 20170609051739) do
   end
 
   add_foreign_key "logs", "users"
+  add_foreign_key "maps", "logs"
 end

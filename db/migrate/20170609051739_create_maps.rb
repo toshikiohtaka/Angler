@@ -3,7 +3,7 @@ class CreateMaps < ActiveRecord::Migration[5.0]
     create_table :maps do |t|
       t.decimal :lat, precision: 9, scale: 6
       t.decimal :lng, precision: 9, scale: 6
-      t.references :log, foreignkey: true
+      t.references :log, foreign_key: true
       t.timestamps
     end
   end
