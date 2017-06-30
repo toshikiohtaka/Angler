@@ -1,8 +1,8 @@
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GEOLOCATION_API_KEY'] %>" async defer>
+</script>
 <div id="map-container">
   <div id="map"></div>
-  <ul>
+  <ul id="side-logs">
     <%= render partial: "side_log" %>
   </ul>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GEOLOCATION_API_KEY'] %>&callback=initMap" async defer>
-</script>

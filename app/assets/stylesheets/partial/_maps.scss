@@ -10,14 +10,14 @@
     padding-top: 61px;
     width: 35%;
     height: calc(100% - 20px);
-    background: rgba(255,0,0,0.5);
+    background: rgba(255,0,0,0.6);
     text-decoration: none;
     overflow: scroll;
     #side-log-container{
       padding: 10px 0 10px 0;
       border-bottom: solid 2px white;
       .row{
-        .log-image{
+        .col-md-5{
           img{
             border: solid 2px white;
             display: block;

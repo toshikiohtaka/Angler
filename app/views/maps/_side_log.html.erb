@@ -1,5 +1,6 @@
+<% num = 1 %>
 <% @logs.each do |log| %>
-  <li class="container" id="side-log-container">
+  <li class="container" id="side-log-container" data-lat="<%= log.map.lat %>" data-lng="<%= log.map.lng %>" data-num=<%= num %>>
     <div class="row">
       <div class="log-image col-md-5">
         <img src="<%= log.image.url %>">
@@ -11,4 +12,5 @@
       </div>
     </div>
   </li>
+<% num += 1 %>
 <% end %>

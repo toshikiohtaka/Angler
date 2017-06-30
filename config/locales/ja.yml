@@ -7,6 +7,7 @@ ja:
     group_id: グループ名
     user: ユーザー
     body: メッセージ
+    image: 写真
   date:
     abbr_day_names:
     - 日
@@ -107,10 +108,10 @@ ja:
     format: ! '%{attribute}%{message}'
     messages:
       accepted: を受諾してください。
+      empty: を選択してください。
       blank: を入力してください。
       present: は入力しないでください。
       confirmation: と%{attribute}の入力が一致しません。
-      empty: を入力してください。
       equal_to: は%{count}にしてください。
       even: は偶数にしてください。
       exclusion: は予約されています。
