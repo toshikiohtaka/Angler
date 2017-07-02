@@ -1,0 +1,48 @@
+#map-container{
+  height: 100%;
+  #map{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 20px);
+  }
+  ul{
+    position: absolute;
+    padding-top: 61px;
+    width: 35%;
+    height: calc(100% - 20px);
+    background: rgba(255,0,0,0.6);
+    text-decoration: none;
+    overflow: scroll;
+    #side-log-container{
+      padding: 10px 0 10px 0;
+      border-bottom: solid 2px white;
+      .row{
+        .col-md-5{
+          img{
+            border: solid 2px white;
+            display: block;
+            margin: 0 auto;
+            max-width: 130px;
+            min-width: 120px;
+            max-height: 130px;
+            min-height: 100px;
+          }
+        }
+        .col-md-7{
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.line{
+  border-width: 2px 0 0 0;
+  border-color: white;
+  margin-left: 0;
+  width: 80%;
+}
+
+#side-log-container:hover{
+  background-color: red;
+}

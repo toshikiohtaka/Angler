@@ -1,0 +1,16 @@
+<% num = 1 %>
+<% @logs.each do |log| %>
+  <li class="container" id="side-log-container" data-lat="<%= log.location.lat %>" data-lng="<%= log.location.lng %>" data-num=<%= num %>>
+    <div class="row">
+      <div class="log-image col-md-5">
+        <img src="<%= log.image.url %>">
+      </div>
+      <div class="col-md-7">
+        <%= log.place %><br><hr class="line">
+        サイズ : <%= log.size %>cm<br>
+        名前 : <%= log.name %><br>
+      </div>
+    </div>
+  </li>
+<% num += 1 %>
+<% end %>
