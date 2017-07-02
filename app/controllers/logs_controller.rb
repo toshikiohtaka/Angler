@@ -10,13 +10,13 @@ class LogsController < ApplicationController
 
   def create
     @log = current_user.logs.new(log_params)
-    if @log.save
-      if params[:lat] || params[:lng]
-        Map.create(lat: params[:lat], lng: params[:lng], log_id: @log.id)
+    if params[:lat] || params[:lng]
+      if @log.save
+        Location.create(lat: params[:lat], lng: params[:lng], log_id: @log.id)
       end
       redirect_to root_path
     else
-      render :new
+      redirect_to new_log_path, notice: "位置情報が取得できませんでした。"
     end
   end
 

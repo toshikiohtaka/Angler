@@ -1,5 +1,8 @@
 <div class="container" id="container-box">
   <%= render "error_text" %>
+  <% if notice %>
+    <div class="alert"><%= notice %></div>
+  <% end %>
   <div class="new-log-box">
     <%= form_for @log do |f| %>
       <div class="form-group row">

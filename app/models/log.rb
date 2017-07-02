@@ -4,7 +4,7 @@ class Log < ApplicationRecord
   validates :image, presence: true
 
   belongs_to :user
-  has_one :map
+  has_one :location
 
   mount_uploader :image, ImageUploader
 end

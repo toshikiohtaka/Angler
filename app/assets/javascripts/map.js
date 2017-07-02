@@ -114,7 +114,7 @@ function error(err) {
 
 if(window.location.href == 'http://localhost:3000/logs/new'){
   navigator.geolocation.getCurrentPosition(getNowPosition, error);
-}else if(window.location.href == "http://localhost:3000/map"){
+}else if(window.location.href == "http://localhost:3000/location"){
   navigator.geolocation.getCurrentPosition(displayMap, error);
 }else{
   console.log("map.js dose not work at here");
