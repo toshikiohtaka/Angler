@@ -2,7 +2,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   storage :fog
 
-  include CarrierWave::ImageOptimizer
+  # include CarrierWave::ImageOptimizer
 
   # process optimize: [{
   #   jpegoptim: true,
@@ -15,8 +15,8 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  def extension_white_list
-    ['jpg', 'jpeg', 'gif', 'png', '']
-  end
+  # def extension_white_list
+  #   ['jpg', 'jpeg', 'gif', 'png', '']
+  # end
 
 end
