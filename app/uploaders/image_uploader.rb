@@ -4,10 +4,10 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::ImageOptimizer
 
-  process optimize: [{
-    jpegoptim: true,
-    optipng: true
-  }]
+  # process optimize: [{
+  #   jpegoptim: true,
+  #   optipng: true
+  # }]
 
   process optimize: [{ quality: 30 }]
 
