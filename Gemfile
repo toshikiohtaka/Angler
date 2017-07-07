@@ -20,6 +20,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'carrierwave'
 gem 'fog'
 gem 'geocoder'
+gem 'carrierwave-imageoptimizer'
 
 
 group :development, :test do
